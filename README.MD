@@ -16,6 +16,11 @@ so the winner depends on the hand chosen
 
 
 ---
+## GAME LOGIC
+-user selects the hand they want to play between rock,paper, scissors
+- if user picks rock and computer picks scissors ...user wins!!!
+- else if user picks paper and computer picks scissors... computer wins!!!
+
 
 ## Requirements
 - Python 3.x  
@@ -30,5 +35,6 @@ so the winner depends on the hand chosen
 3. Open the terminal and type:
    python rock_paper_scissors.py
 4. or you can also run the program by clicking on the 'run python file" BUTTON on the top right corner of your screen 
+
 
 
