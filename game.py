@@ -38,8 +38,12 @@ scissors = '''
 
 images = [rock, paper, scissors]
 
+player_score = 0
+com_score = 0
+
 # Function to play the game
 def play(player_choice):
+    global player_score , com_score ,score_label
 
     com_choice = random.randint(0, 2)
     
@@ -56,15 +60,23 @@ def play(player_choice):
     elif (player_choice == 0 and com_choice == 2) or \
          (player_choice == 1 and com_choice == 0) or \
          (player_choice == 2 and com_choice == 1):
+        player_score +=1
         result_label.config(text=" You win! 🎉", fg="green")
     else:
+        com_score +=1
         result_label.config(text=" You lose 😢", fg="red")
+
+    score_label.config(text=f'score - you: {player_score} computer:{com_score}')   
+
+   
+
+
 
 
 # this Creates the window
 root = tk.Tk()
 root.title(" Rock Paper Scissors")
-root.geometry(" 600x650")
+root.geometry("800x750")
 root.config(bg="#1E1E2F")
 root.resizable(False, False)
 
@@ -100,6 +112,11 @@ result_label = tk.Label(
     root, text="", font=("Helvetica", 18, "bold"), bg="#1E1E2F", fg="white"
 )
 result_label.pack(pady=30)
+score_label = tk.Label(
+     root,text="score -you :0 , computer:0 ",
+     font =('Helvetica',14 ), bg = '#1E1E2F', fg ='white' )
+     
+score_label.pack(pady = 10)
 
 # Frame for buttons
 button_frame = tk.Frame(root, bg="#1E1E2F")
@@ -129,8 +146,8 @@ def button_create( text, command, color):
     def on_enter(e): btn.config(bg="#555")
     def on_leave(e): btn.config(bg=color)
     
-    btn.bind(" < Enter>", on_enter)
-    btn.bind(" < Leave>", on_leave)
+    btn.bind(" <Enter>", on_enter)
+    btn.bind(" <Leave>", on_leave)
     return btn
 
 # calls the button creation function to create The three Buttons 
