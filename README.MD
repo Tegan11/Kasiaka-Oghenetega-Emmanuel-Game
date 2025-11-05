@@ -11,7 +11,9 @@ so the winner depends on the hand chosen
 - User-friendly text interface  
 - Random computer choices  
 - Displays the result of each round  
-- Runs until the player chooses to stop  
+- Runs until the player chooses to stop 
+- ASCII art to show the diffrent hands
+
 
 ---
 
@@ -28,4 +30,5 @@ so the winner depends on the hand chosen
 3. Open the terminal and type:
    python rock_paper_scissors.py
 4. or you can also run the program by clicking on the 'run python file" BUTTON on the top right corner of your screen 
+
 
